@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김지환 · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Mobile top bar ===== -->
+<div class="mobile-bar">
+  <span class="mb-logo">김지환<span class="acc">.</span></span>
+  <button class="mb-toggle" id="mbToggle" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- ===== Sidebar ===== -->
+<aside class="sidebar" id="sidebar">
+  <div class="side-top">
+    <div class="logo">김지환<span class="acc">.</span></div>
+    <div class="logo-sub">Kim Jihwan / Developer</div>
+  </div>
+
+  <nav class="nav">
+    <a href="#home"    class="nav-link active" data-page="home"><span class="nav-idx">00</span><span class="nav-txt">Home</span></a>
+    <a href="#about"   class="nav-link" data-page="about"><span class="nav-idx">01</span><span class="nav-txt">About</span></a>
+    <a href="#work"    class="nav-link" data-page="work"><span class="nav-idx">02</span><span class="nav-txt">Work</span></a>
+    <a href="#field"   class="nav-link" data-page="field"><span class="nav-idx">03</span><span class="nav-txt">Fieldwork</span></a>
+    <a href="#skills"  class="nav-link" data-page="skills"><span class="nav-idx">04</span><span class="nav-txt">Skills</span></a>
+    <a href="#contact" class="nav-link" data-page="contact"><span class="nav-idx">05</span><span class="nav-txt">Contact</span></a>
+  </nav>
+
+  <div class="side-foot">
+    <div class="status-mini"><span class="dot"></span>유연한 사고 · 업무 책임감 · 커뮤니케이션</div>
+    <div class="side-copy">© Portfolio written by Kim Jihwan</div>
+  </div>
+</aside>
+
+<div class="scrim" id="scrim"></div>
+
+<!-- ===== Main ===== -->
+<main class="main" id="main">
+
+  <!-- HOME -->
+  <section class="page active" id="page-home">
+    <div class="home-inner">
+      <div class="home-eyebrow">IT Developer · Portfolio</div>
+      <h1 class="home-title">맡은 서비스를 <span class="hl">정확히 분석</span>하고,<br><span class="hl">완성을 위해 동료와 협력</span>하고,<br><span class="hl">끝까지 책임지고</span> 운영합니다.</h1>
+      <p class="home-lead">4년 4개월간 웹 서비스 개발을 축으로, 분석·설계부터 구축과 운영까지 경험해 온 개발자입니다. 맡은 기능을 명확한 목적으로 구현하되, 완성을 위해서는 연계된 파트까지 파악하고 협력해 서비스가 실제로 동작하도록 만듭니다.</p>
+      <div class="home-cta">
+        <button class="btn btn-primary" data-goto="work">프로젝트 보기 <span>→</span></button>
+        <button class="btn btn-ghost" data-goto="about">더 알아보기</button>
+      </div>
+    </div>
+    <div class="home-scroll">스크롤 또는 좌측 메뉴로 이동</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="page" id="page-about">
+    <div class="page-head">
+      <div class="eyebrow">01 / About</div>
+      <h2>서비스 구현은 기본, 개발만으로 끝내지 않는 개발자</h2>
+      <p class="sub">개발부터 운영·장애 대응·인수인계까지, 서비스의 생애를 책임집니다.</p>
+    </div>
+
+    <p class="lede">맡은 서비스와 기능을 명확한 목적을 가지고 구현하는 것을 우선하는 개발자입니다.<br>그리고 기능이 제대로 동작하고 서비스가 완성되도록,<br><strong>필요할 때는 연계된 다른 파트도 파악하고 협력</strong>해 왔습니다.<br>이처럼 저는 분석·설계부터 구축, 운영까지 서비스의 전 과정을 책임지며 성장했습니다.</p>
+
+    <div class="cols-3">
+      <div class="card">
+        <h3><span class="idx">01</span> 사용자를 고려한<br>분석·설계</h3>
+        <p>사용자는 웹·앱을 구현하는데 있어 기초적인 고려사항입니다.<br>프로젝트를 수행하며 작성한 <strong>인터페이스 설계서(PPT), 업무 기능 분해도(EXCEL)</strong>는 프로그램의 기능이 사용자의 어떤 업무를 효율화하는지 이해하도록 만들었습니다.</p>
+      </div>
+      <div class="card">
+        <h3><span class="idx">02</span> 완성을 위해 시야를 넓히는<br>구현</h3>
+        <p>프론트엔드 화면 구현과 스프링·쿼츠를 활용한 연계 모듈 개발을 주 업무로 수행했고, 맡은 기능을 명확한 목적을 가지고 구현하는 것을 우선했습니다. 그리고 그 기능이 실제로 동작하도록, 필요할 때는 연계된 다른 파트까지 파악했습니다.
+          재난상황판에서는 <strong>타 솔루션 엔진의 OpenLayers를 WebSquare 환경에서 활용</strong>해 지도·아이콘·폴리곤을 구현했습니다.
+          통합관제시스템에서는 모듈 완성을 위해 네트워크 인프라와 OHS를 분석하고, <strong>인프라 담당(TA)에 네트워크 정책 설정을 요청</strong>해 데이터 연계를 완성했으며, 운영 단계의 SSL 인증서 갱신 문제까지 해결했습니다.</p>
+      </div>
+      <div class="card">
+        <h3><span class="idx">03</span> 끝까지 지키는<br>운영</h3>
+        <p>서비스는 배포가 끝이 아니라 시작입니다. <strong>운영 장애를 직접 원인 규명해 복구하고</strong>, 다른 개발자들이 꺼리는 고객·벤더 소통을 도맡았습니다. 재발 방지를 매뉴얼로 남기는 것까지가 제 일입니다.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-when">2022.07 – 2024.02</span><span class="tl-what"><strong>국방통합재난관리정보체계</strong> · 재난상황판 개발, GIS 연계</span></div>
+      <div class="tl-row"><span class="tl-when">2024.08 – 2026.04</span><span class="tl-what"><strong>국군의무사령부 통합관제시스템</strong> · 데이터 연계 모듈 개발, 솔루션 벤더 컨택포인트, 운영유지, 고객대응</span></div>
+      <div class="tl-row"><span class="tl-when">2025.10 – 2026.06</span><span class="tl-what"><strong>경기소방 청사관리시스템</strong> · 외부 연계 기능, 권한관리 업무 개발</span></div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="page" id="page-work">
+    <div class="page-head">
+      <div class="eyebrow">02 / Work</div>
+      <h2>주요 수행 프로젝트</h2>
+      <p class="sub">국방 도메인 대형 프로젝트 2건 + 소방 도메인 프로젝트 1건 · 총 4년 4개월</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="val">30,000<span class="u">건/일</span></div><div class="lab">데이터 연계 처리량</div></div>
+      <div class="metric"><div class="val">5<span class="u">곳</span></div><div class="lab">타기관 연계처 연동</div></div>
+      <div class="metric"><div class="val">10<span class="u">분</span></div><div class="lab">실시간 연계 주기</div></div>
+      <div class="metric"><div class="val">2<span class="u">건</span></div><div class="lab">규명 및 해결한 문제·장애</div></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head">
+        <div><div class="t">국군의무사령부 통합관제시스템 구축</div><div class="r">데이터 연계 모듈 개발 · 운영유지 관리</div></div>
+        <div class="per">2024.08 – 2026.04</div>
+      </div>
+      <div class="proj-body">
+        <div class="stack"><span class="chip">Java</span><span class="chip">Spring</span><span class="chip">Quartz</span><span class="chip">Oracle</span></div>
+        <ul class="contrib">
+          <li>공공데이터 포털 HTTP API <strong>2개 연계처</strong>를 쿼츠 스케줄러로 통합 연계 (10분 주기 + 일 배치)</li>
+          <li>연계처별 장애 격리 구성으로 <strong>일부 실패가 전체 중단으로 번지지 않도록</strong> 설계</li>
+          <li>시스템 솔루션 연계의 <strong>커넥션 포인트 역할</strong> 및 운영 사업 일정 관리</li>
+        </ul>
+        <div class="impact"><span class="k">Impact</span>하루 약 3만 건 연계 흐름을 안정적으로 유지, 장애 시 직접 원인 규명으로 신속 복구</div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head">
+        <div><div class="t">국방통합재난관리정보체계 개발사업</div><div class="r">재난상황판 개발 · GIS 연계</div></div>
+        <div class="per">2022.07 – 2024.02</div>
+      </div>
+      <div class="proj-body">
+        <div class="stack"><span class="chip">JavaScript</span><span class="chip">Tibero</span><span class="chip">HTML5</span><span class="chip">WebSquare</span></div>
+        <ul class="contrib">
+          <li>재난 데이터 표출 및 지도 모듈 기능 개발</li>
+          <li><strong>이기종 솔루션 간 브릿지 구현</strong> — GIS 솔루션 스크립트를 UI/UX 솔루션에 이식</li>
+        </ul>
+        <div class="impact"><span class="k">Impact</span>재난 데이터 시각화로 사용자의 신속한 의사결정 지원</div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head">
+        <div><div class="t">경기소방 청사관리시스템 구축</div><div class="r">외부 시스템 연계 · 권한관리</div></div>
+        <div class="per">2025.10 – 2026.06</div>
+      </div>
+      <div class="proj-body">
+        <div class="stack"><span class="chip">Spring</span><span class="chip">JavaScript</span><span class="chip">JSP</span><span class="chip">PostgreSQL</span></div>
+        <ul class="contrib">
+          <li>E-호조 시스템 데이터 연계 기능 도입으로 예산·사업 담당자 업무 프로세스 단계 축소 (3단계 → 2단계)</li>
+          <li>실물 문서 보고 특성을 고려한 업무 화면 별 <strong>엑셀 다운로드 기능 반영</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIELD -->
+  <section class="page" id="page-field">
+    <div class="page-head">
+      <div class="eyebrow">03 / Fieldwork</div>
+      <h2>답을 듣고 끝내지 않고 실제 동작과 결과를 확인합니다</h2>
+      <p class="sub">"됐다"는 말과 실제 사이의 간극을 파고든 두 사례</p>
+    </div>
+
+    <div class="ts">
+      <div class="ts-item">
+        <div class="phase">구축 단계 · 망 연계</div>
+        <h4>L4 스위치 정책 누락 규명</h4>
+        <p>네트워크 담당으로부터 망 연계가 완료됐다는 답을 받았지만 실제 데이터 호출이 되지 않았습니다. 답변만 믿지 않고 직접 확인해, <strong>솔루션 벤더와 협업하여 L4 스위치 정책 누락을 찾아냈고</strong> 이를 바로잡아 정상화했습니다.</p>
+        <div class="ts-flow"><span>호출 실패 인지</span><i>→</i><span>벤더 협업 추적</span><i>→</i><span>L4 정책 누락 발견</span><i>→</i><span>정상화</span></div>
+      </div>
+      <div class="ts-item">
+        <div class="phase">운영 단계 · 장애 예방</div>
+        <h4>SSL 인증서 만료 선제 대응</h4>
+        <p>모바일 및 웹 인증서 만료를 <strong>하루 앞두고 발견</strong>했습니다. 만료 시 장애가 날 시스템을 먼저 추려 사용자에게 선제 공지하고, 체계 운영·고객과 협의해 재발급 후 복구했습니다. 재발 방지를 위해 <strong>대응 절차를 매뉴얼로 정리해 다음 담당자에게 배포</strong>했습니다.</p>
+        <div class="ts-flow"><span>장애 발생 가능성 확인</span><i>→</i><span>영향 시스템 공지</span><i>→</i><span>재발급 복구</span><i>→</i><span>매뉴얼 배포</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="page" id="page-skills">
+    <div class="page-head">
+      <div class="eyebrow">04 / Skills</div>
+      <h2>기술과 역량</h2>
+      <p class="sub">프론트엔드에서 출발해 개발·운영 전반으로.</p>
+    </div>
+
+    <div class="cols-3">
+      <div class="skill-block">
+        <h3>Analysis &amp; Design</h3>
+        <div class="skill-row"><span>제안 기술 파트 작성</span><span class="lv">RFP 분석·As-Is/To-Be</span></div>
+        <div class="skill-row"><span>인터페이스 설계(PPT·DOCX)</span><span class="lv">업무에 필요한 데이터 정의, 사용성을 고려한 컴포넌트 배치</span></div>
+        <div class="skill-row"><span>업무 기능 분해도(EXCEL)</span><span class="lv">화면별 기능 정의</span></div>
+      </div>
+      <div class="skill-block">
+        <h3>Development</h3>
+        <div class="skill-row"><span>Java / Spring</span><span class="lv">백엔드·연계</span></div>
+        <div class="skill-row"><span>JavaScript / JSP</span><span class="lv">프론트·화면</span></div>
+        <div class="skill-row"><span>Quartz Scheduler</span><span class="lv">배치·주기 연계</span></div>
+        <div class="skill-row"><span>SQL · Oracle/PostgreSQL/Tibero</span><span class="lv">쿼리·연동</span></div>
+      </div>
+      <div class="skill-block">
+        <h3>Field &amp; Ops</h3>
+        <div class="skill-row"><span>운영 장애 대응</span><span class="lv">원인 규명·복구</span></div>
+        <div class="skill-row"><span>솔루션 벤더 협업</span><span class="lv">기술 조율</span></div>
+        <div class="skill-row"><span>고객 커뮤니케이션</span><span class="lv">현장 대응</span></div>
+        <div class="skill-row"><span>운영 매뉴얼화·인수인계</span><span class="lv">지식 전수</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page" id="page-contact">
+    <div class="page-head">
+      <div class="eyebrow">05 / Contact</div>
+      <h2>제대로 만들고, 끝까지 책임지는 개발자</h2>
+      <p class="sub">기능을 만들고, 안정적으로 운영하고, 문제를 끝까지 해결하는 전 과정을 책임지고 싶습니다.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:jihwan2931@gmail.com">
+        <span class="cc-k">Email</span><span class="cc-v">jihwan2931@gmail.com</span>
+      </a>
+      <div class="contact-card">
+        <span class="cc-k">Phone</span><span class="cc-v">010-2931-9833</span>
+      </div>
+      <div class="contact-card">
+        <span class="cc-k">Base</span><span class="cc-v">대구 · 경북 지역 정착 지향</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
