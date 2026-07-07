@@ -27,9 +27,10 @@
     if (main) main.scrollTo({ top: 0, behavior: "auto" });
     window.scrollTo({ top: 0, behavior: "auto" });
 
-    // URL 해시 동기화
+    // URL 해시 동기화 (history.pushState는 file:// 로 열었을 때 브라우저가
+    // "Unsafe attempt to load URL ..." 보안 오류를 던지므로 location.hash를 사용)
     if (push && location.hash !== "#" + name) {
-      history.pushState({ page: name }, "", "#" + name);
+      location.hash = name;
     }
   }
 
@@ -56,8 +57,8 @@
     });
   });
 
-  /* --- 브라우저 뒤로/앞으로 --- */
-  window.addEventListener("popstate", () => {
+  /* --- 브라우저 뒤로/앞으로 (해시 변경 감지) --- */
+  window.addEventListener("hashchange", () => {
     const name = (location.hash || "#home").slice(1);
     showPage(name, false);
   });
