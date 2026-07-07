@@ -229,12 +229,6 @@ h2{font-size:29px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
 .wp-title-period{font-family:var(--mono);font-size:13.5px;font-weight:400;color:var(--ink-faint);letter-spacing:.02em}
 .wp-role{font-size:14px;color:var(--accent)}
 
-.wp-thesis{
-  font-size:13.5px;color:var(--ink-dim);line-height:1.7;
-  background:var(--panel-2);border-left:2px solid var(--accent);
-  border-radius:0 6px 6px 0;padding:11px 16px;margin-bottom:24px;
-}
-
 /* ---------- WORK: Build / Operate phase split ---------- */
 .wp-phase + .wp-phase{margin-top:32px;padding-top:32px;border-top:1px dashed var(--line)}
 .wp-phase-label{
@@ -278,6 +272,7 @@ h2{font-size:29px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
 }
 .wp-howwork{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.wp-howwork-item:last-child{grid-column:1 / -1}
 .wp-howwork-item{background:var(--panel);padding:22px 24px;display:flex;gap:14px;align-items:flex-start}
 .wp-howwork-item .n{font-family:var(--mono);font-size:19px;font-weight:600;color:var(--accent);flex:none}
 .wp-howwork-item p{font-size:14px;color:var(--ink-dim);line-height:1.7}
