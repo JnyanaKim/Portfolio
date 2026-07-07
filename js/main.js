@@ -1,8 +1,7 @@
 /* ============================================================
    김지환 Portfolio · main.js
-   - 사이드바 내비게이션 ↔ 페이지 전환 (SPA 방식)
+   - 상단 내비게이션 ↔ 페이지 전환 (SPA 방식)
    - URL 해시(#about 등) 동기화 + 뒤로가기 지원
-   - 모바일 사이드바 토글
    ============================================================ */
 
 (function () {
@@ -32,8 +31,6 @@
     if (push && location.hash !== "#" + name) {
       history.pushState({ page: name }, "", "#" + name);
     }
-
-    closeSidebar();
   }
 
   /* --- 내비게이션 클릭 --- */
@@ -44,9 +41,19 @@
     });
   });
 
-  /* --- 홈 화면의 CTA 버튼 (data-goto) --- */
-  document.querySelectorAll("[data-goto]").forEach((btn) => {
-    btn.addEventListener("click", () => showPage(btn.dataset.goto, true));
+  /* --- CTA 버튼 / About → Work 프로젝트 바로가기 (data-goto) --- */
+  document.querySelectorAll("[data-goto]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      showPage(el.dataset.goto, true);
+      const anchorId = el.dataset.anchor;
+      if (anchorId) {
+        requestAnimationFrame(() => {
+          const anchorTarget = document.getElementById(anchorId);
+          if (anchorTarget) anchorTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    });
   });
 
   /* --- 브라우저 뒤로/앞으로 --- */
@@ -55,34 +62,25 @@
     showPage(name, false);
   });
 
-  /* --- 모바일 사이드바 토글 --- */
-  const toggle = document.getElementById("mbToggle");
-  const sidebar = document.getElementById("sidebar");
-  const scrim = document.getElementById("scrim");
-
-  function openSidebar() {
-    sidebar.classList.add("open");
-    scrim.classList.add("show");
-    if (toggle) toggle.classList.add("open");
-  }
-  function closeSidebar() {
-    sidebar.classList.remove("open");
-    scrim.classList.remove("show");
-    if (toggle) toggle.classList.remove("open");
-  }
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
-    });
-  }
-  if (scrim) scrim.addEventListener("click", closeSidebar);
-
-  /* --- 키보드 접근성: Esc로 사이드바 닫기 --- */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeSidebar();
-  });
-
   /* --- 최초 진입 시 해시에 맞는 페이지 표시 --- */
   const initial = (location.hash || "#home").slice(1);
   showPage(document.getElementById("page-" + initial) ? initial : "home", false);
+
+  /* --- Work 페이지 서브네비 스크롤 스파이 --- */
+  const subnavLinks = Array.from(document.querySelectorAll(".work-subnav-link"));
+  const workProjects = Array.from(document.querySelectorAll(".work-project, .wp-finale"));
+  if (subnavLinks.length && workProjects.length && "IntersectionObserver" in window) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          subnavLinks.forEach((l) =>
+            l.classList.toggle("active", l.getAttribute("href") === "#" + entry.target.id)
+          );
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+    );
+    workProjects.forEach((p) => spy.observe(p));
+  }
 })();
