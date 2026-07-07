@@ -225,8 +225,8 @@ h2{font-size:29px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
 }
 .wp-index{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
 .wp-head{margin-bottom:18px;padding-bottom:22px;border-bottom:1px solid var(--line)}
-.wp-period{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint);letter-spacing:.02em}
-.wp-title{font-size:19px;font-weight:600;margin:6px 0 5px;letter-spacing:-.01em}
+.wp-title{font-size:21px;font-weight:600;margin:6px 0 5px;letter-spacing:-.01em}
+.wp-title-period{font-family:var(--mono);font-size:13.5px;font-weight:400;color:var(--ink-faint);letter-spacing:.02em}
 .wp-role{font-size:14px;color:var(--accent)}
 
 .wp-thesis{
