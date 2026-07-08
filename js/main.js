@@ -11,8 +11,14 @@
   const pages = Array.from(document.querySelectorAll(".page"));
   const main = document.getElementById("main");
 
+  // location.hash를 직접 대입해 만든 해시 변경은 아래 hashchange 리스너가
+  // 다시 showPage를 실행하지 않도록 막는 플래그 (중복 실행 시 스크롤이 꼬임)
+  let syncingHash = false;
+
   /* --- 페이지 전환 핵심 함수 --- */
-  function showPage(name, push) {
+  function showPage(name, push, resetScroll) {
+    if (resetScroll === undefined) resetScroll = true;
+
     const target = document.getElementById("page-" + name);
     if (!target) return;
 
@@ -23,13 +29,17 @@
       l.classList.toggle("active", l.dataset.page === name)
     );
 
-    // 콘텐츠 상단으로 스크롤 (전환 시 항상 처음부터)
-    if (main) main.scrollTo({ top: 0, behavior: "auto" });
-    window.scrollTo({ top: 0, behavior: "auto" });
+    // 콘텐츠 상단으로 스크롤 (전환 시 항상 처음부터, 단 특정 앵커로 바로
+    // 이동하는 경우에는 생략 — 그렇지 않으면 아래로 스크롤한 직후 다시 맨 위로 튕겨나감)
+    if (resetScroll) {
+      if (main) main.scrollTo({ top: 0, behavior: "auto" });
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
 
     // URL 해시 동기화 (history.pushState는 file:// 로 열었을 때 브라우저가
     // "Unsafe attempt to load URL ..." 보안 오류를 던지므로 location.hash를 사용)
     if (push && location.hash !== "#" + name) {
+      syncingHash = true;
       location.hash = name;
     }
   }
@@ -46,12 +56,14 @@
   document.querySelectorAll("[data-goto]").forEach((el) => {
     el.addEventListener("click", (e) => {
       e.preventDefault();
-      showPage(el.dataset.goto, true);
       const anchorId = el.dataset.anchor;
+      showPage(el.dataset.goto, true, !anchorId);
       if (anchorId) {
         requestAnimationFrame(() => {
-          const anchorTarget = document.getElementById(anchorId);
-          if (anchorTarget) anchorTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+          requestAnimationFrame(() => {
+            const anchorTarget = document.getElementById(anchorId);
+            if (anchorTarget) anchorTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
         });
       }
     });
@@ -59,6 +71,10 @@
 
   /* --- 브라우저 뒤로/앞으로 (해시 변경 감지) --- */
   window.addEventListener("hashchange", () => {
+    if (syncingHash) {
+      syncingHash = false;
+      return;
+    }
     const name = (location.hash || "#home").slice(1);
     showPage(name, false);
   });
