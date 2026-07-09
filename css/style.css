@@ -65,7 +65,7 @@ strong{color:var(--ink);font-weight:500}
    MAIN / PAGES
    ============================================================ */
 .main{min-height:calc(100vh - var(--nav-h))}
-.page{display:none;padding:64px 60px;max-width:calc(var(--page-max) + 420px);margin-inline:auto;animation:fade .45s ease}
+.page{display:none;padding:64px 60px;max-width:calc(var(--page-max) + 440px);margin-inline:auto;animation:fade .45s ease}
 .page.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
@@ -164,20 +164,23 @@ h2{font-size:29px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
 .ab-projects .ab-vitem{margin-bottom:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 26px}
 .ab-projects .ab-vitem::before{display:none}
 
-.ab-skillrow{max-width:360px;margin-bottom:18px}
-.ab-skillrow:last-of-type{margin-bottom:0}
-.ab-skillrow-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;font-size:15px}
-.ab-skillrow-top span:first-child{color:var(--ink);font-weight:500}
-.ab-lv{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint)}
-.ab-skillbar{display:flex;gap:5px}
-.ab-skillbar i{flex:1;height:7px;border-radius:2px;background:var(--line);font-style:normal}
-.ab-skillbar i.on{background:var(--accent)}
-.ab-note{margin-top:14px;font-size:12.5px;color:var(--ink-faint);line-height:1.6}
+.ab-skillgroup{margin-bottom:16px}
+.ab-skillgroup:last-child{margin-bottom:0}
+.ab-skillgroup-role{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.ab-skillgroup-tags{font-size:14.5px;color:var(--ink)}
+.ab-skillgroup-ctx{font-size:13px;color:var(--ink-dim);margin-top:3px}
 
 .ab-attitude{list-style:none}
 .ab-attitude li{position:relative;padding-left:20px;font-size:15px;color:var(--ink-dim);line-height:1.7;margin-bottom:12px}
 .ab-attitude li:last-child{margin-bottom:0}
 .ab-attitude li::before{content:"▸";position:absolute;left:0;color:var(--accent-warm)}
+
+.ab-evidence{list-style:none}
+.ab-evidence li{margin-bottom:14px}
+.ab-evidence li:last-child{margin-bottom:0}
+.ab-evidence-claim{font-size:14px;color:var(--ink);margin:0}
+.ab-evidence-proof{position:relative;font-size:12.5px;color:var(--ink-dim);margin:4px 0 0;padding-left:20px;line-height:1.5}
+.ab-evidence-proof::before{content:"↳";position:absolute;left:2px;top:-1px;color:var(--accent)}
 
 @media (min-width:861px){
   .ab-cols{display:grid;gap:0}
